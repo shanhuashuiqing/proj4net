@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1E0E88AB-3FE5-4F8F-8CD7-0266C27B7EF4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proj4Net</RootNamespace>
+    <AssemblyName>Proj4Net</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GeoAPI">
+      <HintPath>..\packages\GeoAPI.1.6.0\lib\net20\GeoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasicCoordinateTransform.cs" />
+    <Compile Include="ConvergenceFailureException.cs" />
+    <Compile Include="CoordinateReferenceSystem.cs" />
+    <Compile Include="CoordinateReferenceSystemFactory.cs" />
+    <Compile Include="CoordinateTransformFactory.cs" />
+    <Compile Include="Datum\Grids\DatGridTableLoader.cs" />
+    <Compile Include="Datum\Datum.cs" />
+    <Compile Include="Datum\Ellipsoid.cs" />
+    <Compile Include="Datum\GeocentricConverter.cs" />
+    <Compile Include="Datum\Grids\GridTable.cs" />
+    <Compile Include="Datum\Grids\GridTableLoader.cs" />
+    <Compile Include="Datum\Grids\GsbGridTableLoader.cs" />
+    <Compile Include="Datum\Grids\LasLosGridTableLoader.cs" />
+    <Compile Include="Datum\Grids\LlaGridTableLoader.cs" />
+    <Compile Include="Datum\Grids\PhiLambda.cs" />
+    <Compile Include="Projection\Meridian.cs" />
+    <Compile Include="ICoordinateTransform.cs" />
+    <Compile Include="InvalidValueException.cs" />
+    <Compile Include="IO\Proj4FileReader.cs" />
+    <Compile Include="Parser\DatumParameters.cs" />
+    <Compile Include="Parser\Proj4Keywords.cs" />
+    <Compile Include="Parser\Proj4Parser.cs" />
+    <Compile Include="Proj4NetException.cs" />
+    <Compile Include="ProjCoordinate.cs" />
+    <Compile Include="ProjectionException.cs" />
+    <Compile Include="Projection\AiryProjection.cs" />
+    <Compile Include="Projection\AitoffProjection.cs" />
+    <Compile Include="Projection\AlbersProjection.cs" />
+    <Compile Include="Projection\AugustProjection.cs" />
+    <Compile Include="Projection\AzimuthalProjection.cs" />
+    <Compile Include="Projection\BipolarProjection.cs" />
+    <Compile Include="Projection\BoggsProjection.cs" />
+    <Compile Include="Projection\BonneProjection.cs" />
+    <Compile Include="Projection\CassiniProjection.cs" />
+    <Compile Include="Projection\CentralCylindricalProjection.cs" />
+    <Compile Include="Projection\CollignonProjection.cs" />
+    <Compile Include="Projection\ConicProjection.cs" />
+    <Compile Include="Projection\CrasterProjection.cs" />
+    <Compile Include="Projection\CylindricalEqualAreaProjection.cs" />
+    <Compile Include="Projection\CylindricalProjection.cs" />
+    <Compile Include="Projection\DenoyerProjection.cs" />
+    <Compile Include="Projection\Eckert1Projection.cs" />
+    <Compile Include="Projection\Eckert2Projection.cs" />
+    <Compile Include="Projection\Eckert4Projection.cs" />
+    <Compile Include="Projection\Eckert5Projection.cs" />
+    <Compile Include="Projection\Eckert6Projection.cs" />
+    <Compile Include="Projection\EqualAreaAzimuthalProjection.cs" />
+    <Compile Include="Projection\EquidistantAzimuthalProjection.cs" />
+    <Compile Include="Projection\EquidistantConicProjection.cs" />
+    <Compile Include="Projection\EulerProjection.cs" />
+    <Compile Include="Projection\FaheyProjection.cs" />
+    <Compile Include="Projection\FoucautProjection.cs" />
+    <Compile Include="Projection\FoucautSinusoidal.cs" />
+    <Compile Include="Projection\GallProjection.cs" />
+    <Compile Include="Projection\GaussProjection.cs" />
+    <Compile Include="Projection\GnomonicAzimuthalProjection.cs" />
+    <Compile Include="Projection\GoodeProjection.cs" />
+    <Compile Include="Projection\HammerProjection.cs" />
+    <Compile Include="Projection\HatanoProjection.cs" />
+    <Compile Include="Projection\KavraiskyVProjection.cs" />
+    <Compile Include="Projection\LagrangeProjection.cs" />
+    <Compile Include="Projection\LambertAzimuthalEqualAreaProjection.cs" />
+    <Compile Include="Projection\LambertConformalConicProjection.cs" />
+    <Compile Include="Projection\LambertEqualAreaConicProjection.cs" />
+    <Compile Include="Projection\LandsatProjection.cs" />
+    <Compile Include="Projection\LarriveeProjection.cs" />
+    <Compile Include="Projection\LaskowskiProjection.cs" />
+    <Compile Include="Projection\LongLatProjection.cs" />
+    <Compile Include="Projection\LoximuthalProjection.cs" />
+    <Compile Include="Projection\McBrydeThomasFlatPolarParabolicProjection.cs" />
+    <Compile Include="Projection\McBrydeThomasFlatPolarQuarticProjection.cs" />
+    <Compile Include="Projection\McBrydeThomasFlatPolarSine1Projection.cs" />
+    <Compile Include="Projection\McBrydeThomasFlatPolarSine2Projection.cs" />
+    <Compile Include="Projection\MercatorProjection.cs" />
+    <Compile Include="Projection\MillerProjection.cs" />
+    <Compile Include="Projection\MolleweideProjection.cs" />
+    <Compile Include="Projection\MurdochProjections.cs" />
+    <Compile Include="Projection\NellProjection.cs" />
+    <Compile Include="Projection\NicolosiProjection.cs" />
+    <Compile Include="Projection\NullProjection.cs" />
+    <Compile Include="Projection\ObliqueMercatorProjection.cs" />
+    <Compile Include="Projection\ObliqueStereographicAlternativeProjection.cs" />
+    <Compile Include="Projection\PerspectiveConicProjection.cs" />
+    <Compile Include="Projection\PerspectiveProjection.cs" />
+    <Compile Include="Projection\PlateCarreeProjection.cs" />
+    <Compile Include="Projection\PolyconicProjection.cs" />
+    <Compile Include="Projection\Projection.cs" />
+    <Compile Include="Projection\PseudoCylindricalProjection.cs" />
+    <Compile Include="Projection\PutninsP2Projection.cs" />
+    <Compile Include="Projection\PutninsP4Projection.cs" />
+    <Compile Include="Projection\PutninsP5PProjection.cs" />
+    <Compile Include="Projection\PutninsP5Projection.cs" />
+    <Compile Include="Projection\QuarticAuthalicProjection.cs" />
+    <Compile Include="Projection\RectangularPolyconicProjection.cs" />
+    <Compile Include="Projection\RobinsonProjection.cs" />
+    <Compile Include="Projection\SimpleConicProjection.cs" />
+    <Compile Include="Projection\SinusoidalProjection.cs" />
+    <Compile Include="Projection\StereographicAzimuthalProjection.cs" />
+    <Compile Include="Projection\SineTangentSeriesProjection.cs" />
+    <Compile Include="Projection\SwissObliqueMercatorProjection.cs" />
+    <Compile Include="Projection\TransverseCentralCylindricalProjection.cs" />
+    <Compile Include="Projection\TransverseCylindricalEqualAreaProjection.cs" />
+    <Compile Include="Projection\TransverseMercatorProjection.cs" />
+    <Compile Include="Projection\UrmaevFlatPolarSinusoidalProjection.cs" />
+    <Compile Include="Projection\VanDerGrintenProjection.cs" />
+    <Compile Include="Projection\VitkovskyProjection.cs" />
+    <Compile Include="Projection\Wagner1Projection.cs" />
+    <Compile Include="Projection\Wagner2Projection.cs" />
+    <Compile Include="Projection\Wagner3Projection.cs" />
+    <Compile Include="Projection\Wagner4Projection.cs" />
+    <Compile Include="Projection\Wagner5Projection.cs" />
+    <Compile Include="Projection\Wagner7Projection.cs" />
+    <Compile Include="Projection\WerenskioldProjection.cs" />
+    <Compile Include="Projection\WinkelTripelProjection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registry.cs" />
+    <Compile Include="Resources\Error.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Error.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Units\AngleFormat.cs" />
+    <Compile Include="Units\DegreeUnit.cs" />
+    <Compile Include="Units\Unit.cs" />
+    <Compile Include="Units\Units.cs" />
+    <Compile Include="UnknownAuthorityCodeException.cs" />
+    <Compile Include="UnsupportedParameterException.cs" />
+    <Compile Include="Utility\CharBuffer.cs" />
+    <Compile Include="Utility\CoordinateChecker.cs" />
+    <Compile Include="Utility\CoordinateReferenceSystemCache.cs" />
+    <Compile Include="Utility\HighResClock.cs" />
+    <Compile Include="Utility\Logger.cs" />
+    <Compile Include="Utility\ProjectionMath.cs" />
+    <Compile Include="Utility\StreamTokenizer.cs" />
+    <Compile Include="Utility\Token.cs" />
+    <Compile Include="Utility\VerbosityLevel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <EmbeddedResource Include="Resources\epsg" />
+    <EmbeddedResource Include="Resources\esri" />
+    <EmbeddedResource Include="Resources\nad27" />
+    <EmbeddedResource Include="Resources\nad83" />
+    <EmbeddedResource Include="Resources\Error.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Error.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\world" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="License.txt" />
+    <Content Include="ReadMe.htm" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
